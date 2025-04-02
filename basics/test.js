@@ -1,1 +1,2 @@
-console.log("aritra")
+//console.log("aritra")
+console.log("2"===2)
