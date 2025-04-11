@@ -2,7 +2,7 @@
 const tinderUser={};
 tinderUser.id="123"
 tinderUser.name="sammy";
-console.log(tinderUser);
+//console.log(tinderUser);
 const regularUser={
     email:"jdhs@gmail",
     fullname:{
@@ -28,6 +28,9 @@ const users=[{
     
 
 //console.log(obj4);
-users[1].email
-console.log(tinderUser);
-console.log(Object.keys(tinderUser));
+//users[1].email
+//console.log(tinderUser);
+//console.log(Object.keys(tinderUser));
+//console.log(Object.values(tinderUser));
+//console.log(Object.entries(tinderUser));
+//console.log(tinderUser.hasOwnProperty('isLoggedIn'));
