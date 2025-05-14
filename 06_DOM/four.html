@@ -20,5 +20,19 @@
     }
     addLanguage("Python")
     addLanguage('TypeScript')
+    function addOptiLanguage(langName)
+    {
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage("mojo");
+    const secondLang=documet.query("li:nth-child(2)")
+    //secondLang.innerHTML="Rust";
+    const newli=document.createElement('li');
+    newli.textContent="Rust"
+    secondLang.replaceWith(newli);
+    const firstLang=document.querySelector("li:first-child");
+    firstLang.outerHTML='<li>C</li>'
 </script>
 </html>
