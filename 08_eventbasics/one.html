@@ -22,9 +22,21 @@
     // document.getElementById('owl').onclick=function(){
     //     alert("owl clicked");
     // }
-    document.getElementById('owl').addEventListener('click',function(){
-        alert("owl clicked");
-    },false)
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert("owl clicked");
+    // },false)
     
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log("clicked inside ul");
+    },true)
+    
+    document.getElementById('owl').addEventListener('click',function(e){{
+        console.log("clicked inside owl");//true then up to down first ul then owl
+        e.stopPropagation();//stop bubbling
+    }},true)
+    //type,timestamp,defaultPrevented
+    //target,SrcElement,currentTarget,
+    //clientX,clientY,screenX,screenY
+    //altkey,ctrlkey,shiftkey,keyCode
 </script>
 </html>
