@@ -26,18 +26,39 @@
     //     alert("owl clicked");
     // },false)
     
-    document.getElementById('images').addEventListener('click',function(e){
-        console.log("clicked inside ul");
-    },true)
+//     document.getElementById('images').addEventListener('click',function(e){
+//         console.log("clicked inside ul");
+//     },false)
 
-    document.getElementById('owl').addEventListener('click',function(e){
-        console.log("clicked inside owl");//true then up to down first ul then owl
-        //stop bubbling
-        e.stopPropagation();
-    },false);
+//     document.getElementById('owl').addEventListener('click', function(e) {
+//     console.log("clicked inside owl");
+//     e.stopPropagation(); //stop bubbling
+// }, false);
     //type,timestamp,defaultPrevented
     //target,SrcElement,currentTarget,
     //clientX,clientY,screenX,screenY
     //altkey,ctrlkey,shiftkey,keyCode
+    document.getElementById('google').addEventListener('click',function(e){
+        console.log("");
+        e.preventDefault()
+       e.preventDefault();},false)
+
+      document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode);
+         let removeIt=e.target.parentNode;
+         removeIt.remove();
+         //removeIt.parentNode.removeChild(removeIt);
+        })
+//        document.querySelector('#images').addEventListener('click', function(e) {
+//     console.log(e.target);
+//     e.target.remove(); // Removes the clicked element directly
+// });
+document.querySelector('#images').addEventListener('click',function(e){
+    console.log(e.target.tagName);
+    if(e.target.tagName==='IMG')
+    console.log(e.target.id);
+let removeIt=e.target.parentNode;
+removeIt.remove();
+})
 </script>
 </html>
