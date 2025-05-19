@@ -29,11 +29,12 @@
     document.getElementById('images').addEventListener('click',function(e){
         console.log("clicked inside ul");
     },true)
-    
-    document.getElementById('owl').addEventListener('click',function(e){{
+
+    document.getElementById('owl').addEventListener('click',function(e){
         console.log("clicked inside owl");//true then up to down first ul then owl
-        e.stopPropagation();//stop bubbling
-    }},true)
+        //stop bubbling
+        e.stopPropagation();
+    },false);
     //type,timestamp,defaultPrevented
     //target,SrcElement,currentTarget,
     //clientX,clientY,screenX,screenY
