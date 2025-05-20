@@ -17,22 +17,21 @@
 //     }
 //    const intervalID=setInterval(sayDate,1000,"hi");
 //     clearInterval(intervalID);
-
-const  nameDate=function() {
+let intervalID;
+const startNameDate=function(){
+if(!intervalID){
+intervalID=setInterval(display,2000);
+}
+function display(){
     console.log("aritra",Date.now());
-    setInterval(nameDate,1000);
-    }
-  const startButton=document.getElementById('start');
-  const interval=startButton.addEventListener('click',nameDate);
-  const endButton=document.getElementById('end');
-  endButton.addEventListener('click', function() {
-    if (intervalId) {
-        clearInterval(intervalId);
-        intervalId = null;
-    }
-})
 
-
-
+}
+}
+const stopNameDate=function(){
+    clearInterval(intervalID);
+    clearInterval=null;
+}
+document.querySelector('#start').addEventListener('click',startNameDate)
+document.querySelector("#stop").addEventListener('click',stopNameDate);
     </script>
 </html>
