@@ -87,4 +87,4 @@ fetch('https://jsonplaceholder.typicode.com/users').then((response)=>{
 }).then((data)=>{
     console.log(data);
 })
-.catch((error)=>console.log(error))
+.catch((error)=>console.log(error));
