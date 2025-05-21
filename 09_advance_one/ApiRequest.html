@@ -18,9 +18,14 @@
     Xhr.open('GET',requestUrl);
     //console.log("HERE");
     Xhr.onreadystatechange=function(){
-
+        console.log(Xhr.readyState);
+        if(Xhr.readyStste===4){
+            const data=this.responseText;
+            console.log(data);
+            console.log(data.followers);
+        }
     }
-   console.log(Xhr.readyState);
+   //console.log(Xhr.readyState);
     Xhr.send();
 
 </script>
