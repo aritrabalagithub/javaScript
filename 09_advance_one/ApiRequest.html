@@ -11,9 +11,11 @@
 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.<br/>
 3	LOADING	Downloading; responseText holds partial data.<br/>
 4	DONE	The operation is complete.
+<button id="display"> display</button>
+</div>
 </body>
 <script>
-    const requestUrl='http://api.github.com/users/hiteshchoudhary';
+    const requestUrl='https://api.github.com/users/hiteshchoudhary';
     const Xhr=new XMLHttpRequest();
     Xhr.open('GET',requestUrl);
     //console.log("HERE");
@@ -27,6 +29,41 @@
     }
    //console.log(Xhr.readyState);
     Xhr.send();
+  function createCard() {
+    if (!userData) {
+        console.error("Data not loaded yet!");
+        return;
+    }
 
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const img = document.createElement('img');
+    img.src = userData.avatar_url;
+    img.alt = "Profile Image";
+    img.style.width = '100%'; // Optional: Add styling
+
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+
+    const cardTitle = document.createElement('h3');
+    cardTitle.className = 'card-title';
+    cardTitle.textContent = "hitesh"; // Fallback if name is missing
+
+    const followers = document.createElement('p'); // Using <p> instead of <h3>
+    followers.className = 'card-followers';
+    followers.textContent = `Followers: ${userData.followers}`;
+
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(followers);
+    card.appendChild(img);
+    card.appendChild(cardBody);
+
+    // Append to an existing container (e.g., `<div id="container"></div>`)
+    const container = document.getElementById('container') || document.body;
+    container.appendChild(card);
+}
+
+document.querySelector("#display").addEventListener('click', createCard);
 </script>
 </html>
