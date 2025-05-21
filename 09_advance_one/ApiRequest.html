@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>apirequest</title>
 </head>
-<body style="background-color: blanchedalmond;">
+<body style="background-color: blanchedalmond;
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+    max-width: 300px;
+}
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+.card-title {
+    margin: 10px 0;
+}
+.card-followers {
+    color: #666;
+}">
 0	UNSENT	Client has been created. open() not called yet.<br/>
 1	OPENED	open() has been called.<br/>
 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.<br/>
@@ -17,21 +34,22 @@
 </body>
 <script>
     const requestUrl='https://api.github.com/users/hiteshchoudhary';
-    const Xhr=new XMLHttpRequest();
-    Xhr.open('GET',requestUrl);
+    const xhr=new XMLHttpRequest();
+    let data=null;
+    xhr.open('GET',requestUrl);
     //console.log("HERE");
-    Xhr.onreadystatechange=function(){
-        console.log(Xhr.readyState);
-        if(Xhr.readyState===4){
-            const data=JSON.parse(this.responseText);
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState===4){
+             data=JSON.parse(this.responseText);
             console.log(typeof data);
             console.log(data.followers);
         }
     }
-   //console.log(Xhr.readyState);
-    Xhr.send();
+   //console.log(xhr.readyState);
+    xhr.send();
   function createCard() {
-    if (!userData) {
+    if (!data) {
         console.error("Data not loaded yet!");
         return;
     }
@@ -40,9 +58,9 @@
     card.className = 'card';
 
     const img = document.createElement('img');
-    img.src = userData.avatar_url;
+    img.src = data.avatar_url;
     img.alt = "Profile Image";
-    img.style.width = '100%'; // Optional: Add styling
+    img.style.width = '20%'; // Optional: Add styling
 
     const cardBody = document.createElement('div');
     cardBody.className = 'card-body';
@@ -53,7 +71,7 @@
 
     const followers = document.createElement('p'); // Using <p> instead of <h3>
     followers.className = 'card-followers';
-    followers.textContent = `Followers: ${userData.followers}`;
+    followers.textContent = `Followers: ${data.followers}`;
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(followers);
