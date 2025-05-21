@@ -19,3 +19,33 @@ new Promise(function(resolve,reject){
     console.log("promise 2 consumed");
     
 })
+ const promiseThree=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        resolve({username:"chai",email:"example@gmail.com"});
+    },1000)
+});
+
+    promiseThree.then(function(user){
+        console.log(`${user.username}  ${user.email}`);
+    });
+
+//  const promise
+const promiseFour=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        let error=true
+        if(!error){
+            resolve({username:"user4",email:"mail4@gamil"})
+        }
+        else{
+            reject("ERROR:something went wrong");
+        }
+    },1000)
+})
+const username=promiseFour.then((username)=>{
+    console.log(user);
+    return user.username;
+}).then((username)=>{
+console.log(username);
+}).catch(function(error){
+    console.log(error)//reject message
+})
