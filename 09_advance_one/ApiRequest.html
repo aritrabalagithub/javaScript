@@ -11,7 +11,8 @@
 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.<br/>
 3	LOADING	Downloading; responseText holds partial data.<br/>
 4	DONE	The operation is complete.
-<button id="display"> display</button>
+<button id="display"> Load Card </button>
+<div id="container"></div>
 </div>
 </body>
 <script>
@@ -60,7 +61,7 @@
     card.appendChild(cardBody);
 
     // Append to an existing container (e.g., `<div id="container"></div>`)
-    const container = document.getElementById('container') || document.body;
+    const container = document.body;
     container.appendChild(card);
 }
 
