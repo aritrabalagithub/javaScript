@@ -13,9 +13,14 @@
 4	DONE	The operation is complete.
 </body>
 <script>
+    const requestUrl='http://api.github.com/users/hiteshchoudhary'
     const Xhr=new XMLHttpRequest();
-    xhr.open('GET',requestUrl);
-    console.log("HERE")
+    Xhr.open('GET',requestUrl);
+    //console.log("HERE");
+    Xhr.onreadystatechange=function(){
+
+    }
+   console.log(Xhr.readyState);
     Xhr.send();
 
 </script>
