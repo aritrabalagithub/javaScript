@@ -19,9 +19,9 @@
     //console.log("HERE");
     Xhr.onreadystatechange=function(){
         console.log(Xhr.readyState);
-        if(Xhr.readyStste===4){
-            const data=this.responseText;
-            console.log(data);
+        if(Xhr.readyState===4){
+            const data=JSON.parse(this.responseText);
+            console.log(typeof data);
             console.log(data.followers);
         }
     }
