@@ -6,7 +6,7 @@ function setUserName(username){
 function createUser(username,email,password){
     // setUserName(username) //wrong statement
     // setUserName(this,username) //wrong
-    setUserName.call(this,username)
+    setUserName.call(this,username)//current execution context to function
     this.email=email;
     this.password=password;
 }
