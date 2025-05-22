@@ -1,6 +1,6 @@
 const user={
-    usernsme:"hitesh",
+    username:"hitesh",
     loginCount:8,
     signedIn:true
 }
-console.log(user);
+console.log(user.username);
