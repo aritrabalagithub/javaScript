@@ -3,21 +3,25 @@
 <head>
 <title>Page Title</title>
 </head>
-<body>
+<body style="background-color:wheat;color:olive">
 
 <h1>This is a Heading</h1>
 <p>This is a paragraph.</p>
 
 </body>
 <script>
-    function init() {
-  var name = "Mozilla"; // name is a local variable created by init
-  function displayName() {
-    // displayName() is the inner function, that forms a closure
-    console.log(name); // use variable declared in the parent function
-  }
-  displayName();
+//     function init() {
+//   let name = "Mozilla"; 
+//   function displayName() {
+// console.log(name); 
+//   }
+//   displayName();
+// }
+// init();
+function outer(){
+    let username="userop1";
 }
-init();
+console.log(username);
+
 </script>
 </html>
