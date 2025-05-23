@@ -3,11 +3,21 @@
 <head>
 <title>Page Title</title>
 </head>
-<body style="background-color:wheat;color:olive">
+<body style="background-color:wheat;color:black">
+    <style>
+        #orange {
+    background-color:orange;
+}
+#green {
+    background-color:green;
+}
+    </style>
+    
 
 <h1>This is a Heading</h1>
 <p>This is a paragraph.</p>
-
+<button id="orange">Orange</button>
+<button id="green">Green</button>
 </body>
 <script>
 //     function init() {
@@ -33,16 +43,33 @@
 // outer()
 // //console.log(username);
 // console.log('too outer',username);
-function makeFunc() {
-  const name = "Mozilla";
-  function displayName() {
-    console.log(name);
-  }
-  return displayName;
-}
+// function makeFunc() {
+//   const name = "Mozilla";
+//   function displayName() {
+//     console.log(name);
+//   }
+//   return displayName;
+// }
 
-const myFunc = makeFunc();
-myFunc(); 
+// const myFunc = makeFunc();
+// myFunc(); 
+</script>
+<script>
+    // document.querySelector('#orange').addEventListener('click',function(){
+    //     document.body.style.backgroundColor='orange'
+    // });
+    // document.querySelector('#green').addEventListener('click',function(){
+    //     document.body.style.backgroundColor='green'
+    // });
+    function clickHandler(color){
+        //document.body.style.backgroundColor=`${color}`
+       return function(){
+            document.body.style.backgroundColor=`${color}`;
+        }
+    }
+    document.getElementById('orange').onclick=clickHandler("orange");
+    document.getElementById('green').onclick=clickHandler("green");
+    
 
 </script>
 </html>
