@@ -20,8 +20,15 @@
 // init();
 function outer(){
     let username="userop1";
+    function inner(){
+        console.log("inner",username);
+        
+    }
+    inner()
 }
+outer()
 console.log(username);
+console.log('too outer',username)
 
 </script>
 </html>
