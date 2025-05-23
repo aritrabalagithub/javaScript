@@ -18,17 +18,31 @@
 //   displayName();
 // }
 // init();
-function outer(){
-    let username="userop1";
-    function inner(){
-        console.log("inner",username);
+// function outer(){
+//     let username="userop1";
+//     function inner(){
+//         console.log("inner",username);
         
-    }
-    inner()
+//     }
+//     function inner2(){
+//         console.log("inner 2",username);
+//     }
+//     inner()
+//     inner2()
+// }
+// outer()
+// //console.log(username);
+// console.log('too outer',username);
+function makeFunc() {
+  const name = "Mozilla";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
 }
-outer()
-console.log(username);
-console.log('too outer',username)
+
+const myFunc = makeFunc();
+myFunc(); 
 
 </script>
 </html>
