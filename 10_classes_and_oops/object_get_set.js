@@ -15,3 +15,10 @@ const User={
     this._password=val
     }
 }
+const userOne=Object.create(User)
+//console.log(userOne.email);
+userOne.email="newEmail@123"
+userOne.password='neewpass'
+console.log(userOne.email)
+console.log(userOne.password)
+
